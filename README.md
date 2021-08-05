@@ -1,1 +1,1 @@
-Generate Random GIFs
+Generate Random GIFs :)
