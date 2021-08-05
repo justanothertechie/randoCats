@@ -1,0 +1,7 @@
+apiVersion: v1
+description: A Helm chart for randocats Kubernetes
+name: randocats
+version: C.A.T
+keywords:
+  - GO
+

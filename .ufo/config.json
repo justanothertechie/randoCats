@@ -1,0 +1,20 @@
+{
+    "profile": "fuzzplay",
+    "region": "us-east-1",
+    "repo": "650405159858.dkr.ecr.us-east-1.amazonaws.com/randocats",
+    "clusters": [
+      {
+        "name": "default",
+        "services": ["randocats"],
+        "dockerfile": "Dockerfile",
+        "build-args": []
+      }
+    ],
+    "tasks": [
+      {
+        "name": "",
+        "command": ""
+      }
+    ]
+  }
+  

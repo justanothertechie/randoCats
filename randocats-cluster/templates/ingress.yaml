@@ -1,0 +1,12 @@
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+  annotations:
+    name: {{ .Chart.Name }}
+    kubernetes.io/ingress.global-static-ip-name: "randocats-global"
+spec:
+  backend:
+      serviceName: {{ .Chart.Name  }}
+      servicePort: {{ .Values.randocats.port }}

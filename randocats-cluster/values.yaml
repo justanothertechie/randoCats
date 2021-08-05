@@ -1,0 +1,13 @@
+environment: catbox
+
+service:
+  type: NodePort
+
+randocats:
+  image:
+    repository: us.gcr.io/randocats/randocats
+    tag: latest
+    pullPolicy: Always
+  replicas: 3
+  name: randocats
+  port: 8080

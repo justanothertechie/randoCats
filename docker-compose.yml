@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  randocats:
+    container_name: randocats
+    build: .
+    tty: true
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "200k"
+        max-file: "10"
+    environment:
+      SERVICE_NAME: randocats
+      SERVICE_TAGS: dev
+    networks:
+      - randocats-network
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    tty: true
+    restart: unless-stopped
+    links:
+      - randocats:randocats
+    logging:
+      driver: json-file
+      options:
+        max-size: "200k"
+        max-file: "10"
+    ports:
+      - '8000:80'
+    networks:
+      - randocats-network
+
+networks:
+  randocats-network:
+    driver: bridge
